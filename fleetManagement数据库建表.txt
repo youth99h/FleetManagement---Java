@@ -1,0 +1,68 @@
+数据库名为fleetManagement
+编码格式用UTF-8
+1、建立用户表
+create table user (
+User char(10) PRIMARY KEY,
+Password char(20)
+);
+2、建立车辆基本信息表
+create table car(
+CarNum char(10) PRIMARY key,
+RegisterTime CHAR(20),
+CertificateTime CHAR(20),
+Type CHAR(10),
+CarOwner CHAR(10),
+EngineNum CHAR(10),
+Num CHAR(10),
+CarBrand CHAR(10),
+CarPeople CHAR(10),
+CarColor char(10)
+);
+3、建立司机基本信息表
+create table driver(
+Name char(10) PRIMARY KEY,
+Sex char(10),
+Day char(20),
+FirstDay char(20),
+BeginDay char(20),
+OverDay char(20),
+Place char(30),
+PermitNum char(10),
+CarType char(10),
+CONSTRAINT sex CHECK (Sex in('男','女'))
+);
+4、建立车辆费用基本信息表
+create table carcost(
+CostNum char(10) ,
+ServiceTime char(20),
+ServiceMany char(10),
+ServiceUtil char(20),
+ServiceContent char(20),
+ServiceAccessories char(20),
+Remark char(30)
+);
+5、建立油卡基本信息表
+create table oilcard(
+CardNum char(10) ,
+OilBrand char(10),
+PayNo char(255),
+PayCarNo char(10),
+PayMoney char(10),
+InNo char(255),
+InMoney char(10),
+InputTime char(20),
+OilRemark char(30)
+);
+6、出派车基本信息表
+create table delivery(
+DeliveryNum char(10) ,
+DeliveryName char(10),
+GoOff char(20),
+Start char(30),
+Bourn char(30)
+);
+7、司机账号信息表
+create table driverlogin (
+Name char(10) PRIMARY KEY,
+Password char(20)
+);
